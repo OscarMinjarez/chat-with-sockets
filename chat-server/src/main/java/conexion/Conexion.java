@@ -20,7 +20,7 @@ public class Conexion {
     
     protected String mensajeServidor;
     protected ServerSocket serverSocket;
-    protected Socket clientSocket;
+    protected Socket clientSocket; // Recibir la conexión de un cliente
     protected DataOutputStream salidaServidor, salidaCliente;
     
     public Conexion(String tipo) throws IOException {

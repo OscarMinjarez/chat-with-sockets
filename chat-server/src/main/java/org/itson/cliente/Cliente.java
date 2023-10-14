@@ -12,23 +12,21 @@ import java.io.IOException;
  *
  * @author arace
  */
-public class Cliente extends Conexion
-{
-    public Cliente() throws IOException{super("cliente");} 
+public class Cliente extends Conexion {
 
-    public void startClient() 
-    {
-        try
-        {
-            salidaServidor = new DataOutputStream(cs.getOutputStream());
-            for (int i = 0; i < 2; i++)
-            {
-                salidaServidor.writeUTF("Este es el mensaje número " + (i+1) + "\n");
+    public Cliente() throws IOException {
+        super("cliente");
+    }
+
+    public void startClient() {
+        try {
+            salidaServidor = new DataOutputStream(this.clientSocket.getOutputStream());
+            for (int i = 0; i < 2; i++) {
+                salidaServidor.writeUTF("Este es el mensaje número " + (i + 1) + "\n");
             }
-            cs.close();
-        }
-        catch (Exception e)
-        {
+            
+            this.clientSocket.close();
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }

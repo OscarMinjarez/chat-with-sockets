@@ -24,7 +24,7 @@ public class Servidor extends Conexion {
         try {
             System.out.println("Esperando...");
             
-            this.clientSocket = this.serverSocket.accept();
+            this.clientSocket = this.serverSocket.accept(); // Va a esperar a que se conecte un cliente
             
             System.out.println("Cliente en linea");
             
